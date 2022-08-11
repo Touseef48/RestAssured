@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <test verbose="2" preserve-order="true" name="/home/touseef/Public">
+        <classes>
+            <class name="testcases.GETUsers"><methods>
+            <include name="test01"/><include name="test02"/>
+            </methods></class>
+            <class name="testcases.createUser"><methods>
+                <include name="Post"/></methods></class><class name="testcases.deleteUser"><methods>
+                <include name="Delete"/></methods></class><class name="testcases.updatePatch"><methods>
+                <include name="patch"/></methods></class><class name="testcases.updateUser"><methods>
+                <include name="PUT"/>
+            </methods></class>
+        </classes>
+    </test>
+</suite>
