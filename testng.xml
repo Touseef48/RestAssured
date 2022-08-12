@@ -3,15 +3,32 @@
 <suite name="All Test Suite">
     <test verbose="2" preserve-order="true" name="/home/touseef/Public">
         <classes>
-            <class name="testcases.GETUsers"><methods>
-            <include name="test01"/><include name="test02"/>
-            </methods></class>
-            <class name="testcases.createUser"><methods>
-                <include name="Post"/></methods></class><class name="testcases.deleteUser"><methods>
-                <include name="Delete"/></methods></class><class name="testcases.updatePatch"><methods>
-                <include name="patch"/></methods></class><class name="testcases.updateUser"><methods>
+            <class name="testcases.GETUsers">
+                <methods>
+                    <include name="test01"/>
+                    <include name="test02"/>
+                </methods>
+            </class>
+            <class name="testcases.createUser">
+                <methods>
+                <include name="Post"/>
+                </methods>
+            </class>
+            <class name="testcases.updatePatch">
+            <methods>
+                <include name="patch"/>
+            </methods>
+            </class>
+            <class name="testcases.updateUser">
+                <methods>
                 <include name="PUT"/>
-            </methods></class>
+            </methods>
+            </class>
+            <class name="testcases.deleteUser">
+                <methods>
+                    <include name="Delete"/>
+                </methods>
+            </class>
         </classes>
     </test>
 </suite>
