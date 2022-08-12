@@ -2,20 +2,11 @@ package helpers;
 
 import Payload.payload;
 import constants.EndPoints;
-import io.qameta.allure.internal.shadowed.jackson.core.type.TypeReference;
-import io.restassured.RestAssured;
-import io.restassured.common.mapper.TypeRef;
-import io.restassured.http.ContentType;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import io.restassured.response.ResponseBody;
-import model.Person;
-import org.apache.http.HttpStatus;
 import org.junit.Assert;
 import utils.ConfigManager;
-
-import java.lang.reflect.Type;
-import java.util.List;
 
 import static io.restassured.RestAssured.*;
 import static org.hamcrest.Matchers.equalTo;
