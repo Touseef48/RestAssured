@@ -1,26 +1,28 @@
 package helpers;
 
 import Payload.payload;
+import config.applicationConfigReader;
 import constants.EndPoints;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import io.restassured.response.ResponseBody;
 import org.junit.Assert;
 import utils.ConfigManager;
-
+import config.configProperties;
 import static io.restassured.RestAssured.*;
 import static org.hamcrest.Matchers.equalTo;
 
 
 public class PersonServiceHelper {
+    public static String baseURL=configProperties.BaseURl;
     public static String id;
 
 public static Response GetAllPerson(){
-    baseURI=ConfigManager.baseURI;
+    baseURI=baseURL;
     Response response =given()
             .get(EndPoints.GET_ALL_USERS).
             then().
-            statusCode(200).body("total_pages",equalTo(2)).
+            statusCode(200).
             log().all().extract().response();
     /*
     ---------------------------------------------------------------------
@@ -45,7 +47,7 @@ public static Response GetAllPerson(){
         ---------------------------------------------------------------------
                 Creating New User using POST Request and getting assigned ID:
         ---------------------------------------------------------------------     */
-        baseURI= ConfigManager.baseURI;
+        baseURI= baseURL;
         Response response=given().
                 header("Content-type", "application/json")
                 .and()
@@ -69,7 +71,7 @@ public static Response GetAllPerson(){
         ---------------------------------------------------------------------
             Update all information of the created employee by id.
         ---------------------------------------------------------------------     */
-        baseURI= ConfigManager.baseURI;
+        baseURI= baseURL;
         Response response=given().
                 header("Content-type", "application/json")
                 .and().
@@ -88,7 +90,7 @@ public static Response GetAllPerson(){
         ---------------------------------------------------------------------
             Update only a patch of information.
         ---------------------------------------------------------------------     */
-        baseURI= ConfigManager.baseUri;
+        baseURI= baseURL;
         Response response=given().
                 header("Content-type", "application/json")
                 .and().
@@ -107,7 +109,7 @@ public static Response GetAllPerson(){
             Delete the updated employee.
 
         ---------------------------------------------------------------------     */
-        baseURI= ConfigManager.baseUri;
+        baseURI= baseURL;
         Response response=when()
                 .delete(EndPoints.DELETE_USER).
                 then().
